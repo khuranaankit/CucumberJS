@@ -44,5 +44,4 @@ let driver = new Builder().forBrowser('chrome').build();
       + ' but the Actual title is ' + title);
     }
     });
-    driver.close();
   });
