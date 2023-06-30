@@ -1,5 +1,5 @@
 Feature: Addition
-
+@myScenario1
   # Inputs first number and second number are in one line
   Scenario: Sum of two numbers
   

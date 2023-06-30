@@ -11,5 +11,8 @@
   "dependencies": {
     "@cucumber/cucumber": "^9.2.0",
     "selenium-webdriver": "^4.10.0"
+  },
+  "devDependencies": {
+    "cucumber-html-reporter": "^7.1.0"
   }
 }
