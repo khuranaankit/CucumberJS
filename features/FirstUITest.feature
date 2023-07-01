@@ -6,4 +6,4 @@ Feature: Automate a website
       When field with name "li3" is present check the box
       When select the textbox add "Kya Kar rahe ho" in the box
       Then click the "addbutton"
-      Then I must see title "Sample page - lambdatest.com1"
+      Then I must see title "Sample page - lambdatest.com"
