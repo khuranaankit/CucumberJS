@@ -1,10 +1,11 @@
-const {Before, After,Status,AfterStep} = require('@cucumber/cucumber');
+const {Before, After,Status,AfterStep, BeforeStep} = require('@cucumber/cucumber');
 const {Builder} = require("selenium-webdriver");
 var browserOptions = require("selenium-webdriver/"+process.env.browser);
 var myglobal = {driver:null,
-    expectedSum: '30'};
+    expectedSum: '30',
+    message:''};
 
-
+// const inputJson = JSON.parse("../testData/input.json");
 
 //Function to open Browser.
 async function openBrowser(){
@@ -32,10 +33,14 @@ AfterStep(async function (teststep) {
         return driver.takeScreenshot().then((screenShot) => {
             // screenShot is a base-64 encoded PNG
             world.attach(screenShot, 'image/png');
+            world.attach(myglobal.message);
         });
-    // }
-    
-    
+    // }  
+});
+
+//Before Step Hook - will be executed before each step.
+BeforeStep(function (teststep){
+    myglobal.message="";
 });
 
 //After Hook - will be executed after each test case.
